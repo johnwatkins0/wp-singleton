@@ -1,0 +1,10 @@
+language: php
+php:
+  - "7.1"
+install:
+  - composer install
+script:
+  - composer run lint
+notifications:
+  email: false
+  slack: johnwatkins0:VNM6Rad4WILTZAwHDY4xbybX

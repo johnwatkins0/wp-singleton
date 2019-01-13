@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "name": "johnwatkins0/wp-singleton",
+  "description": "A singleton trait for use in WordPress projects",
+  "authors": [
+    {
+      "name": "John Watkins",
+      "email": "johnwatkins0@gmail.com"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "wp-singleton.php"
+    ]
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.4",
+    "wp-coding-standards/wpcs": "^1.2"
+  },
+  "scripts": {
+    "lint": "phpcs"
+  }
+}
