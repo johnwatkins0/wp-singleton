@@ -1,30 +1,23 @@
-# wp-autoloader
+# wp-singleton
 
-Registers an SPL autoloader that loads classes, interfaces, and traits using WordPress file naming conventions.
+A singleton trait for use in WordPress projects
 
 ## Example
 
-```
-| functions.php
-| inc
-    class-my-class.php
-    trait-my-trait.php
-    interface-my-interface.php
-```
-
 ```PHP
-<?php
 
-namespace My_Namespace;
+use JohnWatkins0\WPSingleton\Singleton;
 
-class My_Class implements My_Interface {
-    use My_Trait;
+class My_Class {
+    use Singleton;
+
+    protected function init() {
+        // Do stuff when the object is first created.
+    }
 }
 
-```
+My_Class::get_instance(); // Retrieve an instance.
+My_Class::get_instance(); // Same instance as above.
+new My_Class(); // Error.
 
-```PHP
-// functions.php
-
-register_wp_autoload( 'My_Namespace', __DIR__ . '/inc' );
 ```
